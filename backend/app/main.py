@@ -10,6 +10,7 @@ from app.api.routes_ai import router as ai_router
 from app.api.routes_backtests import router as backtests_router
 from app.api.routes_optimization import router as optimization_router
 from app.api.routes_reports import router as reports_router
+from app.api.routes_etoro import router as etoro_router
 
 # Création des tables SQLite au démarrage
 Base.metadata.create_all(bind=engine)
@@ -35,6 +36,7 @@ app.include_router(ai_router)
 app.include_router(backtests_router)
 app.include_router(optimization_router)
 app.include_router(reports_router)
+app.include_router(etoro_router)
 
 
 @app.get("/")

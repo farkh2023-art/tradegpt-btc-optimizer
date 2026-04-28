@@ -4,7 +4,7 @@ import { aiApi } from '../api/ai'
 import {
   LayoutDashboard, Wand2, BookTemplate, Code2, Bug,
   BarChart2, SlidersHorizontal, GitCompare, FileText,
-  Settings, Wifi, WifiOff, Bitcoin,
+  Settings, Wifi, WifiOff, Bitcoin, Wallet,
 } from 'lucide-react'
 
 const NAV = [
@@ -17,6 +17,7 @@ const NAV = [
   { to: '/optimize',    label: 'Optimisation',       icon: SlidersHorizontal },
   { to: '/compare',     label: 'Comparaison A/B',    icon: GitCompare },
   { to: '/reports',     label: 'Rapports',           icon: FileText },
+  { to: '/etoro',       label: 'eToro Portfolio',    icon: Wallet },
   { to: '/settings',    label: 'Paramètres',         icon: Settings },
 ]
 

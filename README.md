@@ -104,6 +104,53 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ---
 
+## Intégration eToro — lecture seule
+
+L'intégration eToro permet d'analyser un portefeuille existant. Elle est strictement en **lecture seule** : aucun ordre d'achat ou de vente n'est jamais envoyé à eToro.
+
+### Garanties de sécurité
+
+- `ETORO_ALLOW_REAL_ORDERS=false` dans `.env` — **ne jamais passer cette valeur à `true`**.
+- Le backend lève une erreur fatale au démarrage si cette valeur est modifiée.
+- Les clés API ne sont jamais écrites dans les logs.
+
+### Mode mock (défaut)
+
+Fonctionne sans aucune clé API. Un portefeuille fictif BTC-centré est retourné automatiquement.
+
+```env
+ETORO_API_ENABLED=false   # mode mock actif
+ETORO_PUBLIC_API_KEY=     # laisser vide
+ETORO_USER_KEY=           # laisser vide
+ETORO_ALLOW_REAL_ORDERS=false
+```
+
+### Activer la connexion réelle
+
+```env
+ETORO_API_ENABLED=true
+ETORO_PUBLIC_API_KEY=votre-clé-publique
+ETORO_USER_KEY=votre-user-key
+ETORO_ALLOW_REAL_ORDERS=false   # doit rester false
+```
+
+### Endpoints disponibles
+
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/etoro/status` | État de la connexion et du mode |
+| GET | `/api/etoro/portfolio` | Valeur totale, cash, positions, métriques |
+| GET | `/api/etoro/positions` | Liste détaillée des positions |
+| POST | `/api/etoro/analyze` | Analyse TradeGPT du portefeuille |
+
+### Interface
+
+Page accessible dans la sidebar : **eToro Portfolio** (`/etoro`).
+
+Affiche : valeur totale · cash · performance · exposition BTC · tableau des positions · graphique de répartition · analyse TradeGPT.
+
+---
+
 ## Tests
 
 ```powershell

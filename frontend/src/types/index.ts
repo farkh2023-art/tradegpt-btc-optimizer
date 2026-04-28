@@ -102,3 +102,43 @@ export interface DebugResult {
   explanation: string
   severity: 'ok' | 'warning' | 'error'
 }
+
+export interface EtoroStatus {
+  enabled: boolean
+  mode: string
+  connected: boolean
+  allow_real_orders: boolean
+  mock: boolean
+}
+
+export interface EtoroPosition {
+  symbol: string
+  name: string
+  weight_pct: number
+  performance_pct: number
+  invested: number
+  current_value: number
+  buy_price: number | null
+  sell_price: number | null
+  is_crypto: boolean
+}
+
+export interface EtoroPortfolio {
+  total_value: number
+  cash: number
+  invested: number
+  performance_pct: number
+  btc_exposure_pct: number
+  concentration_score: number
+  currency: string
+  positions: EtoroPosition[]
+}
+
+export interface EtoroAnalysis {
+  btc_exposure_pct: number
+  concentration_score: number
+  recommendations: string[]
+  risk_level: string
+  summary: string
+  disclaimer: string
+}

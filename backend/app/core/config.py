@@ -17,5 +17,13 @@ class Settings(BaseSettings):
 
     CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:3000"]
 
+    # eToro integration — lecture seule uniquement
+    ETORO_API_ENABLED: bool = False
+    ETORO_API_BASE_URL: str = "https://public-api.etoro.com"
+    ETORO_PUBLIC_API_KEY: Optional[str] = None
+    ETORO_USER_KEY: Optional[str] = None
+    ETORO_MODE: str = "read_only"
+    ETORO_ALLOW_REAL_ORDERS: bool = False  # doit rester false — jamais modifier
+
 
 settings = Settings()

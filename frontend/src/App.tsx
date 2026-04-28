@@ -9,6 +9,7 @@ import BacktestPage from './pages/BacktestPage'
 import OptimizePage from './pages/OptimizePage'
 import ComparePage from './pages/ComparePage'
 import ReportsPage from './pages/ReportsPage'
+import EtoroPortfolioPage from './pages/EtoroPortfolioPage'
 import SettingsPage from './pages/SettingsPage'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/optimize"  element={<OptimizePage />} />
         <Route path="/compare"   element={<ComparePage />} />
         <Route path="/reports"   element={<ReportsPage />} />
+        <Route path="/etoro"     element={<EtoroPortfolioPage />} />
         <Route path="/settings"  element={<SettingsPage />} />
       </Route>
     </Routes>
