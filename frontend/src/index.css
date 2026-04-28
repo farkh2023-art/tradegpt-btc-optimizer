@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0a0f1e] text-slate-100 antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+}
+
+@layer utilities {
+  .bg-navy-900 { background-color: #0a0f1e; }
+  .bg-navy-800 { background-color: #0d1526; }
+  .bg-navy-700 { background-color: #111d35; }
+  .bg-navy-900\/30 { background-color: rgb(10 15 30 / 0.3); }
+  .hover\:bg-white\/3:hover { background-color: rgb(255 255 255 / 0.03); }
+}
