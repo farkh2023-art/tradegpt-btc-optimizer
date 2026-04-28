@@ -35,7 +35,7 @@ Fonctionnel **sans clé API** grâce au mode mock intégré.
 
 ```powershell
 # Cloner le projet
-git clone <url> tradegpt-btc-optimizer
+git clone https://github.com/farkh2023-art/tradegpt-btc-optimizer.git
 cd tradegpt-btc-optimizer
 
 # Backend
@@ -45,7 +45,7 @@ pip install -r backend\requirements.txt
 copy .env.example .env
 
 cd backend
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 ```powershell
@@ -106,11 +106,12 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ## Tests
 
-```bash
+```powershell
 cd backend
-python -m venv .venv && .venv\Scripts\activate  # Windows
+python -m venv .venv
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-pytest tests/ -v
+python -m pytest tests/ -v
 ```
 
 ---
